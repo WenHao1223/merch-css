@@ -5,9 +5,56 @@ initTE({ Ripple, Input, Carousel });
 import { useState } from 'react';
 
 const Home = () => {
-    const data = {
-
-    };
+    const [data, setData] = useState([
+        {
+            id: 1,
+            title: "Fake hair for bald",
+            price: 20,
+            des: "Specially for CS students who lose hair when battling with bugs and butterflies.",
+            img: ["https://ae01.alicdn.com/kf/HTB10tX.LpXXXXbRaXXXq6xXFXXXO/24-Long-False-Hair-Ponytail-Extension-Wavy-Fake-Hair-PonytailS-Apply-Hair-Synthetic-Ribbon-Ponytail-Clip.jpg", "https://ae01.alicdn.com/kf/HTB1UvMaLXXXXXaQXpXXq6xXFXXXU/26-Long-Fake-Hair-Afro-Wig-Full-Wig-for-Women-Cheap-Synthetic-Wavy-Wigs-Female-False.jpg"],
+            quantity: 0
+        },
+        {
+            id: 2,
+            title: "C++ Programming Textbook",
+            price: 90.5,
+            des: "Who else do not want a high-quality programming textbook? Enhancing your skils with this popular programming language!",
+            img: ["https://sanet.pics/storage-6/1220/cSVBrYjVMGKvup2NLqNUmO8dVByarJba.jpg"],
+            quantity: 0
+        },
+        {
+            id: 3,
+            title: "Glorious GMMK PRO Keyboard",
+            price: 300,
+            des: "This model is best suited with programmers, with its sturdy build quality and portable size.",
+            img: ["https://cdn.mos.cms.futurecdn.net/QKfSDwu2YF65woEFUBz4Hc-970-80.jpg"],
+            quantity: 0
+        },
+        {
+            id: 4,
+            title: "Not Fake Google T",
+            price: 20,
+            des: "Specially for CS students who lose hair when battling with bugs and butterflies.",
+            img: ["https://i.etsystatic.com/30702661/r/il/fe3766/3175228512/il_fullxfull.3175228512_7d0i.jpg", "https://ae01.alicdn.com/kf/HTB1kqsvSXXXXXbiaXXXq6xXFXXXA/Google-TShirt-men-boy-Summer-O-Neck-white-youth-t-shirt-casual-white-print-anime-t.jpg"],
+            quantity: 0
+        },
+        {
+            id: 5,
+            title: "Bugs",
+            price: 10,
+            des: "Just normal insects. No code please.",
+            img: ["https://www.petful.com/wp-content/uploads/2018/01/pet-tarantula-750x527.jpg"],
+            quantity: 0
+        },
+        {
+            id: 6,
+            title: "iPhone 15 Pro",
+            price: 6000,
+            des: "CS Students always day-dream of that.",
+            img: ["https://photos5.appleinsider.com/gallery/51707-102459-iPhone-15-Ultra-colors-xl.jpg", "https://www.91-cdn.com/pricebaba-blogimages/wp-content/uploads/2022/12/iPhone-15-Ultra.jpg", "https://backend.mobilizujeme.cz/wp-content/uploads/2022/11/iphone-15.jpg"],
+            quantity: 0
+        },
+    ]);
 
     return (
         <>
@@ -66,7 +113,7 @@ const Home = () => {
 
                         <div className="relative mb-6" data-te-input-wrapper-init>
                             <input type="number" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear hover:border-primary-600  active:border-primary-700 active:border-primary-800 focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInputNumber" placeholder="Example label" />
-                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Order amount
+                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Click here to choose order quantity
                             </label>
                         </div>
 
@@ -125,7 +172,7 @@ const Home = () => {
 
                         <div className="relative mb-6" data-te-input-wrapper-init>
                             <input type="number" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear hover:border-primary-600  active:border-primary-700 active:border-primary-800 focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInputNumber" placeholder="Example label" />
-                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Order amount
+                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Click here to choose order quantity
                             </label>
                         </div>
 
@@ -184,7 +231,7 @@ const Home = () => {
 
                         <div className="relative mb-6" data-te-input-wrapper-init>
                             <input type="number" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear hover:border-primary-600  active:border-primary-700 active:border-primary-800 focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInputNumber" placeholder="Example label" />
-                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Order amount
+                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Click here to choose order quantity
                             </label>
                         </div>
 
@@ -243,7 +290,7 @@ const Home = () => {
 
                         <div className="relative mb-6" data-te-input-wrapper-init>
                             <input type="number" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear hover:border-primary-600  active:border-primary-700 active:border-primary-800 focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInputNumber" placeholder="Example label" />
-                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Order amount
+                            <label htmlFor="exampleFormControlInputNumber"className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Click here to choose order quantity
                             </label>
                         </div>
 

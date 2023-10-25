@@ -21,16 +21,16 @@ const SharedLayout = () => {
                 </div>
             </nav>
 
-            <div className="2xl:py-[8em] xl::py-[8em] px-6 md:px-12 py-6">
+            <div className="px-6 md:px-12 py-6">
                 <Outlet/>
             </div>
 
-            <footer className="absolute md:sticky sm:sticky xs:sticky fixed inset-x-0 bottom-0 right-0 flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
+            <footer className="absolute 2xl:sticky xl:sticky md:sticky sm:sticky xs:sticky inset-x-0 bottom-0 right-0 flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
                 <div className="lg:block md:hidden sm:hidden xs:hidden container p-6 text-neutral-800 dark:text-neutral-200">
                     <div className="grid gap-12 lg:grid-cols-2">
                         <div className="mb-6 md:mb-0">
                             <h5 className="mb-2 font-medium uppercase">Website Purpose</h5>
-                            <p className="mb-4">This website is to revamp the design of the CSS Society USM Merch website at https://merch.cssocietyusm.com/ for technical evaluation purpose.</p>
+                            <p className="mb-4">This website is to revamp the design of the CSS Society USM Merch website at https://merch.cssocietyusm.com/ for technical evaluation purpose. Images used in this website are not for commercialized purpose but with educational intention. All products sold here are solely fake and not sold in real life.</p>
                             <h5 className="mb-2 font-medium uppercase">Small Introduction</h5>
                             <p className="mb-4">As a web developer whose focuses more on code implementation, I prefer to use frameworks and libraries to design UI. In this website, I have used <a href="https://tailwindcss.com/docs/" target="_blank">Tailwind CSS</a> and <a href="https://tw-elements.com/" target="_blank">TW elements</a> along with ReactJS for fast development. </p>
                         </div>
