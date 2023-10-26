@@ -8,7 +8,6 @@ import { isArrayEmpty } from "../components/utils";
 
 const Home = (props) => {
     const [data, setData] = useState(props.data);
-    console.log(props.data);
 
     const generateCards = isArrayEmpty(props.data) ? [] : props.data.map((item, pos) => {
         const moreCardImages = isArrayEmpty(item.img.slice(1)) ? [] : item.img.slice(1).map((img, pos) => {
@@ -44,7 +43,7 @@ const Home = (props) => {
             setData(updatedData);
             alert(quantity.textContent+" item(s) were added.")
             document.getElementsByClassName("quantity"+id)[0].textContent = "1";
-            console.log(data);
+            props.setQuantitySum(data.map(item => item.quantity).reduce((sum, amount) => sum + amount));
         }
 
         return (
@@ -65,7 +64,7 @@ const Home = (props) => {
                         {moreCardImages}
                     </div>
 
-                    {!isArrayEmpty(item.img.slice(1)) && 
+                    {/* {!isArrayEmpty(item.img.slice(1)) &&  */}
                         <>
                             <button className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-te-target={"#carousel"+item.id} data-te-slide="prev">
                                 <span className="inline-block h-8 w-8">
@@ -85,7 +84,7 @@ const Home = (props) => {
                                 <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
                             </button>
                         </>
-                    }
+                    {/* } */}
 
                     </div>
                 </div>
@@ -110,7 +109,7 @@ const Home = (props) => {
     return (
         <>
             <h1 className="font-semibold text-4xl"><code className="bg-gray-800">Hello world!</code> Are you a nerd? </h1>
-            <h4 className="py-3 text-xl">Grab the chance here to get nerds' product if you are USM CS student! 🤓</h4>
+            <h4 className="py-3 text-xl mb-4">Grab the chance here to get nerds' product if you are USM CS student! 🤓</h4>
 
             <div className="flex gap-4 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1">
                 {generateCards}

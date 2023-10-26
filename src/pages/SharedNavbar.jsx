@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { Outlet } from 'react-router-dom';
 import 'boxicons';
 
-const SharedLayout = () => {
+const SharedLayout = (props) => {
     return (
         <div className="h-[13]">
             <nav className="absolute md:sticky sm:sticky xs:sticky inset-x-0 top-0 navbar flex min-h-[6rem] px-6 md:px-12 z-30 bg-theme-800 text-white transition-all items-center bg-gradient-to-r from-slate-900 to-slate-600">
