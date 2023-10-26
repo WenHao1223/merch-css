@@ -5,7 +5,7 @@ const SharedLayout = () => {
     return (
         <div className="h-[13]">
             <nav className="absolute md:sticky sm:sticky xs:sticky inset-x-0 top-0 navbar flex min-h-[6rem] px-6 md:px-12 z-30 bg-theme-800 text-white transition-all items-center bg-gradient-to-r from-slate-900 to-slate-600">
-                <div className="absolute left-20 xl:left-20 lg:left-20 md:left-10 sm:left-10 xs:left-5 flex md:flex md:flex-grow flex-row w-1/2 justify-start items-center">
+                <div className="absolute left-20 2xl:left-20 xl:left-20 lg:left-20 md:left-10 sm:left-10 xs:left-5 left-5 flex md:flex md:flex-grow flex-row w-1/2 justify-start items-center">
                     <div className="flex items-center gap-4 z-10">
                         <img className="flex justify-center gap-4"  src="https://merch.cssocietyusm.com//assets/logos/cs-soc-official.svg" alt="CSS Logo" width="64px"/>
                         <span className='text-left font-normal tracking-wider 2xl:text-xl xl:text-xl lg:text-xl md:text-xl sm:text-sm xs:text-sm -z-10'>
@@ -14,7 +14,7 @@ const SharedLayout = () => {
                         </span>
                     </div>
                 </div>
-                <div className="absolute right-20 xl:right-20 lg:right-20 md:right-10 sm:right-10 xs:right-5 flex md:flex md:flex-grow flex-row w-1/2 justify-end items-center">
+                <div className="absolute right-20 2xl:right-20 xl:right-20 lg:right-20 md:right-10 sm:right-10 xs:right-5 right-5 flex md:flex md:flex-grow flex-row w-1/2 justify-end items-center">
                     <button className="flex justify-end items-center 2xl::text-xl xl:text-xl lg:text-xl md:text-xl sm:text-sm xs:text-sm">
                         <box-icon name='cart' type='solid' color='#ffffff'></box-icon>
                         &nbsp;&nbsp;CART</button>
@@ -25,12 +25,12 @@ const SharedLayout = () => {
                 <Outlet/>
             </div>
 
-            <footer className="absolute 2xl:sticky xl:sticky md:sticky sm:sticky xs:sticky inset-x-0 bottom-0 right-0 flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
-                <div className="lg:block md:hidden sm:hidden xs:hidden container p-6 text-neutral-800 dark:text-neutral-200">
+            <footer className="z-20 2xl:static xl:static lg:static md:sticky sm:sticky xs:sticky sticky inset-x-0 bottom-0 right-0 flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
+                <div className="2xl:block xl:block lg:block md:hidden sm:hidden xs:hidden hidden container p-6 text-neutral-800 dark:text-neutral-200">
                     <div className="grid gap-12 lg:grid-cols-2">
                         <div className="mb-6 md:mb-0">
                             <h5 className="mb-2 font-medium uppercase">Website Purpose</h5>
-                            <p className="mb-4">This website is to revamp the design of the CSS Society USM Merch website at https://merch.cssocietyusm.com/ for technical evaluation purpose. Images used in this website are not for commercialized purpose but with educational intention. All products sold here are solely fake and not sold in real life.</p>
+                            <p className="mb-4">This website is to revamp the design of the CSS Society USM Merch website at <a href="https://merch.cssocietyusm.com/" target="_blank">https://merch.cssocietyusm.com/</a> for technical evaluation purpose. Images used in this website are not for commercialized purpose but with educational intention. All products sold here are solely fake and not sold in real life.</p>
                             <h5 className="mb-2 font-medium uppercase">Small Introduction</h5>
                             <p className="mb-4">As a web developer whose focuses more on code implementation, I prefer to use frameworks and libraries to design UI. In this website, I have used <a href="https://tailwindcss.com/docs/" target="_blank">Tailwind CSS</a> and <a href="https://tw-elements.com/" target="_blank">TW elements</a> along with ReactJS for fast development. </p>
                         </div>
