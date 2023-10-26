@@ -1,9 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Initialization for ES Users
-import { Ripple, Carousel, initTE } from "tw-elements";
-
 // pages
 import Home from './pages/Home';
 import Cart from './pages/Cart';
