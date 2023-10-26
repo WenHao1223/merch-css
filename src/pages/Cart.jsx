@@ -116,7 +116,6 @@ const Cart = (props) => {
                                         order: data.map(({title, quantity}) => ({title, quantity}))
                                     }).then(() => {
                                         confirm("Your form has been submitted and waiting to be reviewed by the team!");
-                                        document.getElementById("customerForm").submit();
                                         navigate("/merch-css/")
                                     }).catch((error) => {
                                         console.log(error);
