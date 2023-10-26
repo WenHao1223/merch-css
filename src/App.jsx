@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // pages
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Error from './Error';
 
 import SharedLayout from './pages/SharedNavbar';
 
@@ -18,7 +19,8 @@ const App = () => {
             "https://torontohairtransplantclinic.com/wp-content/uploads/2017/05/Alopecia-Hair-Loss.jpg",
             "https://ae01.alicdn.com/kf/HTB1UvMaLXXXXXaQXpXXq6xXFXXXU/26-Long-Fake-Hair-Afro-Wig-Full-Wig-for-Women-Cheap-Synthetic-Wavy-Wigs-Female-False.jpg"
           ],
-          quantity: 0
+          quantity: 0,
+          available: true
       },
       {
           id: 2,
@@ -28,7 +30,8 @@ const App = () => {
           img: [
             "https://sanet.pics/storage-6/0620/l3HJD0MmwqaqM0XI1YsnXPaz8myDTYiN.png"
           ],
-          quantity: 0
+          quantity: 0,
+          available: false
       },
       {
           id: 3,
@@ -38,7 +41,8 @@ const App = () => {
           img: [
             "https://cdn.mos.cms.futurecdn.net/QKfSDwu2YF65woEFUBz4Hc-970-80.jpg"
         ],
-          quantity: 0
+          quantity: 0,
+          available: true
       },
       {
           id: 4,
@@ -49,7 +53,8 @@ const App = () => {
             "https://i.etsystatic.com/30702661/r/il/fe3766/3175228512/il_fullxfull.3175228512_7d0i.jpg", 
             "https://ae01.alicdn.com/kf/HTB1kqsvSXXXXXbiaXXXq6xXFXXXA/Google-TShirt-men-boy-Summer-O-Neck-white-youth-t-shirt-casual-white-print-anime-t.jpg"
           ],
-          quantity: 0
+          quantity: 0,
+          available: true
       },
       {
           id: 5,
@@ -59,7 +64,8 @@ const App = () => {
           img: [
             "https://www.petful.com/wp-content/uploads/2018/01/pet-tarantula-750x527.jpg"
         ],
-          quantity: 0
+          quantity: 0,
+          available: true
       },
       {
           id: 6,
@@ -71,7 +77,8 @@ const App = () => {
             "https://www.91-cdn.com/pricebaba-blogimages/wp-content/uploads/2022/12/iPhone-15-Ultra.jpg",
             "https://backend.mobilizujeme.cz/wp-content/uploads/2022/11/iphone-15.jpg"
           ],
-          quantity: 0
+          quantity: 0,
+          available: true
       },
   ]);
   
@@ -82,7 +89,8 @@ const App = () => {
       <Routes>
         <Route path="/merch-css/" element={<SharedLayout data={data} quantitySum={quantitySum}/>}>
           <Route index element={<Home data={data} quantitySum={quantitySum} setQuantitySum={setQuantitySum}/>}></Route>
-          <Route path="cart" element={<Cart quantitySum={quantitySum}/>}></Route>
+          <Route path="cart" element={<Cart data={data} quantitySum={quantitySum} setQuantitySum={setQuantitySum}/>}></Route>
+          <Route path="*" element={<Error/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

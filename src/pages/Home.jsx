@@ -1,6 +1,4 @@
-// Initialization for ES Users
 import { Ripple, Carousel, initTE } from "tw-elements";
-// initTE({ Ripple, Carousel });
 import React, { useState, useEffect } from 'react';
 
 import { isArrayEmpty } from "../components/utils";
@@ -12,7 +10,7 @@ const Home = (props) => {
 
     const [data, setData] = useState(props.data);
 
-    const generateCards = isArrayEmpty(props.data) ? [] : props.data.map((item, pos) => {
+    const generateCards = isArrayEmpty(data) ? [] : data.map((item, pos) => {
         const moreCardImages = isArrayEmpty(item.img.slice(1)) ? [] : item.img.slice(1).map((img, pos) => {
             return(
                 <div key={pos} className="relative h-56 float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
@@ -48,7 +46,7 @@ const Home = (props) => {
             document.getElementsByClassName("quantity"+id)[0].textContent = "1";
             props.setQuantitySum(data.map(item => item.quantity).reduce((sum, amount) => sum + amount));
             console.log(data);
-            console.log(props.quantitySum);
+            console.log(props.data);
         }
 
         return (
@@ -106,7 +104,7 @@ const Home = (props) => {
                         <button onClick={() => add(item.id)} type="button" className="-ml-0.5 inline-block rounded-none rounded-r border-2 border-secondary-600 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-secondary transition duration-150 ease-in-out hover:text-secondary-300 hover:bg-secondary-600 focus:text-secondary-300 focus:outline-none focus:ring-0 active:text-secondary-200 active:bg-secondary-700" data-te-ripple-init data-te-ripple-color="light"> + </button>
                     </div>
 
-                    <button type="button" onClick={() => addCart(item.id)} className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] disabled:opacity-75" data-te-ripple-init data-te-ripple-color="light">Add to Cart</button>
+                    <button type="button" onClick={() => addCart(item.id)} className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] disabled:opacity-75" data-te-ripple-init data-te-ripple-color="light" disabled={!item.available}>{item.available ? "Add to Cart" : "Unavailable"}</button>
                     
                 </div>
             </div>
