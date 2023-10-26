@@ -66,11 +66,11 @@ const Cart = (props) => {
         return(
             <li key={pos} className="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 dark:border-opacity-50">
                 <div key={item.id} className="grid grid-cols-5 gap-4">
-                    <div className="col-span-3">
-                        <p className="text-lg">{item.title}</p>
+                    <div className="2xl:col-span-3 xl::col-span-3 lg::col-span-3 md::col-span-3 sm:col-span-3 col-span-2">
+                        <p className="2xl:text-lg xl:text-lg lg:text-lg md:text-lg text-base">{item.title}</p>
                         <p className="text-sm text-gray-500">RM {item.price.toFixed(2)} {!item.available && "(unavailable)"}</p>
                     </div>
-                    <div className="col-span-2">
+                    <div className="2xl:col-span-2 xl:col-span-2 lg:col-span-2 md:col-span-2 sm:col-span-2 col-span-3 2xl:text-base xl:text-base lg:text-base md:text-base text-sm">
                         <button disabled={!item.available} className="disabled:opacity-50 disabled:pointer-events-none" onClick={() => sub(item.id)}>-</button>
                         <span id={"quantity"+item.id} className="px-3">{item.quantity}</span>
                         <button disabled={!item.available} className="disabled:opacity-50 disabled:pointer-events-none" onClick={() => add(item.id)}>+</button>
@@ -164,7 +164,7 @@ const Cart = (props) => {
                 <div className="2xl:col-span-2 xl:col-span-2">
                     <div className="py-6 px-6 flex flex-row w-full items-center grid justify-items-center border border-slate-700 rounded-xl mb-4">
                     <h1 className="font-semibold text-4xl mb-6">Cart</h1>
-                        <ul className="w-96">
+                        <ul className="w-full">
                             {listItem}
                             <li className="w-full py-4">
                                 <div className="grid grid-cols-5 gap-4">

@@ -34,7 +34,7 @@ const SharedLayout = (props) => {
                 <Outlet/>
             </div>
 
-            <footer className="hidden z-20 2xl:static xl:static lg:static md:sticky sm:sticky xs:sticky sticky inset-x-0 bottom-0 right-0 flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
+            <footer className="z-20 2xl:static xl:static lg:static md:sticky sm:sticky xs:sticky sticky inset-x-0 bottom-0 right-0 flex flex-col items-center bg-neutral-100 text-center dark:bg-neutral-600 lg:text-left">
                 <div className="2xl:block xl:block lg:block md:hidden sm:hidden xs:hidden hidden container p-6 text-neutral-800 dark:text-neutral-200">
                     <div className="grid gap-12 lg:grid-cols-2">
                         <div className="mb-6 md:mb-0">
