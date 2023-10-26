@@ -117,6 +117,7 @@ const Cart = (props) => {
                                     }).then(() => {
                                         confirm("Your form has been submitted and waiting to be reviewed by the team!");
                                         document.getElementById("customerForm").submit();
+                                        navigate("/merch-css/")
                                     }).catch((error) => {
                                         console.log(error);
                                         alert("File upload failed. Please submit the form again.");
