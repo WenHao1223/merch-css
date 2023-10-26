@@ -1,5 +1,6 @@
 import { Ripple, Input, Select, Modal, initTE } from "tw-elements";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { isArrayEmpty } from "../components/utils";
 
@@ -29,6 +30,10 @@ const Cart = (props) => {
     const [data, setData] = useState(props.data);
     const [file, setFile] = useState(null);
 
+    const [quantitySum, setQuantitySum] = useState(props.quantitySum);
+
+    const navigate = useNavigate();
+
     const sub = (id) => {
         let quantity = document.getElementById("quantity"+id);
         if(quantity.textContent > 0){
@@ -36,6 +41,7 @@ const Cart = (props) => {
             let updatedData = data;
             updatedData[id-1]["quantity"] = parseInt(quantity.textContent);
             setData(updatedData);
+            setQuantitySum(data.map(item => item.quantity).reduce((sum, amount) => sum + amount));
             props.setQuantitySum(data.map(item => item.quantity).reduce((sum, amount) => sum + amount));
         }
         console.log(data);
@@ -48,6 +54,7 @@ const Cart = (props) => {
         let updatedData = data;
         updatedData[id-1]["quantity"] = parseInt(quantity.textContent);
         setData(updatedData);
+        setQuantitySum(data.map(item => item.quantity).reduce((sum, amount) => sum + amount));
         props.setQuantitySum(data.map(item => item.quantity).reduce((sum, amount) => sum + amount));
         console.log(data);
         console.log(props.data);
@@ -84,65 +91,70 @@ const Cart = (props) => {
 
     const submitForm = (e) => {
         console.log(e);
-        if(document.getElementById("t-name").value !== "" && document.getElementById("t-email").value !== "" && document.getElementById("t-phone").value !== "" && document.getElementsByClassName("t-gender")[0].value !== "" && document.getElementsByClassName("t-year")[0].value !== "" && document.getElementsByClassName("t-delivery")[0].value !== "" && document.getElementById("t-file").value !== "" && document.getElementById("t-agree-rules").checked && document.getElementById("t-agree-refund").checked){
-            if(document.getElementById("t-matric").value.match(/(\d{8})/gm) || document.getElementById("t-matric").value == ""){
-                if(document.getElementById("t-email").value.match(/[a-zA-Z0-9\.]+@(?:student\.usm\.my|usm\.my)\b/gm)){
-                    if(document.getElementById("t-phone").value.match(/^(\+601)[02-46-9]-*[0-9]{7}$|^(\+601)[1]-*[0-9]{8}$/gm)){
-                        let storageRef = ref(storage, document.getElementById("t-phone").value.slice(1,));
-                        uploadBytes(storageRef, file).then((snapshot) => {
-                            console.log("Uploaded a file: ", snapshot);
-                            getDownloadURL(storageRef).then(async (url) => {
-                                console.log("File uploaded at url ", url);
-                                await setDoc(doc(db, "Payment", document.getElementById("t-phone").value.slice(1,)), {
-                                    user: {
-                                        name: document.getElementById("t-name").value,
-                                        matricNo: document.getElementById("t-matric").value,
-                                        email: document.getElementById("t-email").value,
-                                        phone: document.getElementById("t-phone").value,
-                                        gender: document.getElementsByClassName("t-gender")[0].value,
-                                        studyYear: document.getElementsByClassName("t-year")[0].value,
-                                        deliveryMethod: document.getElementsByClassName("t-delivery")[0].value,
-                                        paymentScreenshotUrl: url,
-                                        specialNeed: document.getElementById("t-special").value
-                                    },
-                                    order: data.map(({title, quantity}) => ({title, quantity}))
-                                }).then((result) => {
-                                    console.log("Document uploaded: ", result);
+        if(quantitySum > 0){
+            if(document.getElementById("t-name").value !== "" && document.getElementById("t-email").value !== "" && document.getElementById("t-phone").value !== "" && document.getElementsByClassName("t-gender")[0].value !== "" && document.getElementsByClassName("t-year")[0].value !== "" && document.getElementsByClassName("t-delivery")[0].value !== "" && document.getElementById("t-file").value !== "" && document.getElementById("t-agree-rules").checked && document.getElementById("t-agree-refund").checked){
+                if(document.getElementById("t-matric").value.match(/(\d{8})/gm) || document.getElementById("t-matric").value == ""){
+                    if(document.getElementById("t-email").value.match(/[a-zA-Z0-9\.]+@(?:student\.usm\.my|usm\.my)\b/gm)){
+                        if(document.getElementById("t-phone").value.match(/^(\+601)[02-46-9]-*[0-9]{7}$|^(\+601)[1]-*[0-9]{8}$/gm)){
+                            let storageRef = ref(storage, document.getElementById("t-phone").value.slice(1,));
+                            uploadBytes(storageRef, file).then((snapshot) => {
+                                console.log("Uploaded a file: ", snapshot);
+                                getDownloadURL(storageRef).then(async (url) => {
+                                    console.log("File uploaded at url ", url);
+                                    await setDoc(doc(db, "Payment", document.getElementById("t-phone").value.slice(1,)), {
+                                        user: {
+                                            name: document.getElementById("t-name").value,
+                                            matricNo: document.getElementById("t-matric").value,
+                                            email: document.getElementById("t-email").value,
+                                            phone: document.getElementById("t-phone").value,
+                                            gender: document.getElementsByClassName("t-gender")[0].value,
+                                            studyYear: document.getElementsByClassName("t-year")[0].value,
+                                            deliveryMethod: document.getElementsByClassName("t-delivery")[0].value,
+                                            paymentScreenshotUrl: url,
+                                            specialNeed: document.getElementById("t-special").value
+                                        },
+                                        order: data.map(({title, quantity}) => ({title, quantity}))
+                                    }).then(() => {
+                                        confirm("Your form has been submitted and waiting to be reviewed by the team!");
+                                        navigate("/merch-css/")
+                                    }).catch((error) => {
+                                        console.log(error);
+                                        alert("File upload failed. Please submit the form again.");
+                                    });
                                 }).catch((error) => {
-                                    console.log(error);
-                                    alert("File upload failed. Please submit the form again.");
+                                    switch (error.code) {
+                                        case 'storage/object-not-found':
+                                            console.log("File doesn't exist");
+                                            break;
+                                        case 'storage/unauthorized':
+                                            console.log("User doesn't have permission to access the object")
+                                            break;
+                                        case 'storage/canceled':
+                                            console.log("User cancelled the upload")
+                                            break;
+                                        case 'storage/unknown':
+                                            console.log("Unknown error occured")
+                                            break;
+                                    }
                                 });
                             }).catch((error) => {
-                                switch (error.code) {
-                                    case 'storage/object-not-found':
-                                        console.log("File doesn't exist");
-                                        break;
-                                    case 'storage/unauthorized':
-                                        console.log("User doesn't have permission to access the object")
-                                        break;
-                                    case 'storage/canceled':
-                                        console.log("User cancelled the upload")
-                                        break;
-                                    case 'storage/unknown':
-                                        console.log("Unknown error occured")
-                                        break;
-                                }
+                                console.log(error);
+                                alert("File upload failed. Please submit the form again.");
                             });
-                        }).catch((error) => {
-                            console.log(error);
-                            alert("File upload failed. Please submit the form again.");
-                        });
+                        } else {
+                            alert("Wrong Phone Number format");
+                        }
                     } else {
-                        alert("Wrong Phone Number format");
+                        alert("Wrong USM Email format");
                     }
                 } else {
-                    alert("Wrong USM Email format");
+                    alert("Wrong USM Matric Number format");
                 }
             } else {
-                alert("Wrong USM Matric Number format");
+                alert("Please fill in all information required before submit.");
             }
         } else {
-            alert("Please fill in all information required before submit.");
+            alert("Please add some items into cart.");
         }
     };
 
