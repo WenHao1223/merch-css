@@ -1,13 +1,20 @@
 import { useEffect } from "react";
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import 'boxicons';
 
 const SharedLayout = (props) => {
+    const navigate = useNavigate();
+    const cart = () => {
+        return navigate("/merch-css/cart");
+    }
+    const home = () => {
+        return navigate("/merch-css");
+    }
     return (
         <div className="h-[13]">
             <nav className="absolute md:sticky sm:sticky xs:sticky inset-x-0 top-0 navbar flex min-h-[6rem] px-6 md:px-12 z-30 bg-theme-800 text-white transition-all items-center bg-gradient-to-r from-slate-900 to-slate-600">
                 <div className="absolute left-20 2xl:left-20 xl:left-20 lg:left-20 md:left-10 sm:left-10 xs:left-5 left-5 flex md:flex md:flex-grow flex-row w-1/2 justify-start items-center">
-                    <div className="flex items-center gap-4 z-10">
+                    <div className="flex items-center gap-4 z-10 cursor-pointer" onClick={home}>
                         <img className="flex justify-center gap-4"  src="https://merch.cssocietyusm.com//assets/logos/cs-soc-official.svg" alt="CSS Logo" width="64px"/>
                         <span className='text-left font-normal tracking-wider 2xl:text-xl xl:text-xl lg:text-xl md:text-xl sm:text-sm xs:text-sm -z-10'>
                             USM NERDS' <br />
@@ -16,7 +23,7 @@ const SharedLayout = (props) => {
                     </div>
                 </div>
                 <div className="absolute right-20 2xl:right-20 xl:right-20 lg:right-20 md:right-10 sm:right-10 xs:right-5 right-5 flex md:flex md:flex-grow flex-row w-1/2 justify-end items-center">
-                    <button className="flex justify-end items-center 2xl::text-xl xl:text-xl lg:text-xl md:text-xl sm:text-sm xs:text-sm">
+                    <button onClick={cart} className="flex justify-end items-center 2xl::text-xl xl:text-xl lg:text-xl md:text-xl sm:text-sm xs:text-sm">
                         <box-icon name='cart' type='solid' color='#ffffff'></box-icon>
                         &nbsp;&nbsp;CART</button>
                 </div>
