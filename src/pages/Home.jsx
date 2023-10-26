@@ -14,7 +14,7 @@ const Home = (props) => {
         const moreCardImages = isArrayEmpty(item.img.slice(1)) ? [] : item.img.slice(1).map((img, pos) => {
             return(
                 <div key={pos} className="relative h-56 float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
-                    <img src={img} className="block w-full h-full object-cover" alt="Camera" />
+                    <img src={img} className="block w-full h-full object-cover" alt="Carousel Image" />
                 </div>
             );
         });
@@ -62,7 +62,7 @@ const Home = (props) => {
 
                         <div className="relative rounded-t-lg w-full overflow-hidden after:clear-both after:block after:content-['']">
                             <div className="relative h-56 float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item data-te-carousel-active>
-                                <img src={item.img[0]} className="block w-full h-full object-cover" alt="Carousel Images" />
+                                <img src={item.img[0]} className="block w-full h-full object-cover" alt="Carousel Image" />
                             </div>
 
                             {moreCardImages}

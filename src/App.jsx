@@ -17,7 +17,7 @@ const App = () => {
           des: "Specially for CS students who lose hair when battling with bugs and butterflies.",
           img: [
             "https://torontohairtransplantclinic.com/wp-content/uploads/2017/05/Alopecia-Hair-Loss.jpg",
-            "https://ae01.alicdn.com/kf/HTB1UvMaLXXXXXaQXpXXq6xXFXXXU/26-Long-Fake-Hair-Afro-Wig-Full-Wig-for-Women-Cheap-Synthetic-Wavy-Wigs-Female-False.jpg"
+            "https://i5.walmartimages.com/asr/0d4ad9c0-2999-4091-a2c6-de5fe6058a86_1.6d4f3dd589a70afde41c821d0518c38d.jpeg"
           ],
           quantity: 0,
           available: true
@@ -51,7 +51,7 @@ const App = () => {
           des: "Specially for CS students who lose hair when battling with bugs and butterflies.",
           img: [
             "https://i.etsystatic.com/30702661/r/il/fe3766/3175228512/il_fullxfull.3175228512_7d0i.jpg", 
-            "https://ae01.alicdn.com/kf/HTB1kqsvSXXXXXbiaXXXq6xXFXXXA/Google-TShirt-men-boy-Summer-O-Neck-white-youth-t-shirt-casual-white-print-anime-t.jpg"
+            "https://i.etsystatic.com/23151672/r/il/ecc9a9/2376537189/il_1588xN.2376537189_o36w.jpg"
           ],
           quantity: 0,
           available: true
