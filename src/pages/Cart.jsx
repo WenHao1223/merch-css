@@ -194,7 +194,7 @@ const Cart = (props) => {
                                 </div>
 
                                 <div className="relative flex-auto p-4" data-te-modal-body-ref>
-                                    <img className="h-full" src="https://s6.imgcdn.dev/9NVhq.jpg" alt="payWithQR" />
+                                    <img className="h-full w-full object-cover" src="https://s6.imgcdn.dev/9NVhq.jpg" alt="payWithQR" />
                                 </div>
 
                                 <div className="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">

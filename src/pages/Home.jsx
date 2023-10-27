@@ -104,7 +104,7 @@ const Home = (props) => {
                         <button onClick={() => add(item.id)} type="button" className="-ml-0.5 inline-block rounded-none rounded-r border-2 border-secondary-600 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-secondary transition duration-150 ease-in-out hover:text-secondary-300 hover:bg-secondary-600 focus:text-secondary-300 focus:outline-none focus:ring-0 active:text-secondary-200 active:bg-secondary-700" data-te-ripple-init data-te-ripple-color="light"> + </button>
                     </div>
 
-                    <button type="button" onClick={() => addCart(item.id)} className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] disabled:opacity-75" data-te-ripple-init data-te-ripple-color="light" disabled={!item.available}>{item.available ? "Add to Cart" : "Unavailable"}</button>
+                    <button type="button" onClick={() => addCart(item.id)} className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal dark:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] disabled:opacity-75" data-te-ripple-init data-te-ripple-color="light" disabled={!item.available}>{item.available ? "Add to Cart" : "Unavailable"}</button>
                     
                 </div>
             </div>
@@ -113,7 +113,7 @@ const Home = (props) => {
 
     return (
         <>
-            <h1 className="font-semibold text-4xl"><code className="bg-gray-800">Hello world!</code> Are you a nerd? </h1>
+            <h1 className="font-semibold text-4xl"><code className="bg-gray-300 dark:bg-gray-800">Hello world!</code> Are you a nerd? </h1>
             <h4 className="py-3 text-xl mb-4">Grab the chance here to get nerds' product if you are USM CS student! 🤓</h4>
 
             <div className="flex gap-4 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1">

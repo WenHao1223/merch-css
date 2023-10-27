@@ -24,7 +24,7 @@ const SharedLayout = (props) => {
                     </div>
                 </div>
                 <div className="absolute right-20 2xl:right-20 xl:right-20 lg:right-20 md:right-10 sm:right-10 xs:right-5 right-5 flex md:flex md:flex-grow flex-row w-1/2 justify-end items-center">
-                    <button onClick={cart} className="flex justify-end items-center 2xl::text-xl xl:text-xl lg:text-xl md:text-xl sm:text-sm xs:text-sm">
+                    <button onClick={cart} className="bg-gray-800 flex justify-end items-center 2xl::text-xl xl:text-xl lg:text-xl md:text-xl sm:text-sm xs:text-sm">
                         <box-icon name='cart' type='solid' color='#ffffff'></box-icon>
                         &nbsp;&nbsp;CART&nbsp;({props.quantitySum})</button>
                 </div>
