@@ -13,7 +13,8 @@ const Error = () => {
 
             <p className="mb-6">The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
 
-            <Link to="/merch-css/">Back Home</Link>
+            {/* <Link to="/merch-css/">Back Home</Link> */}
+            <Link to="/">Back Home</Link>
         </section>
     );
 };

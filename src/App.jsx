@@ -87,7 +87,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/merch-css/" element={<SharedLayout data={data} quantitySum={quantitySum}/>}>
+        {/* <Route path="/merch-css/" element={<SharedLayout data={data} quantitySum={quantitySum}/>}> */}
+        <Route path="/" element={<SharedLayout data={data} quantitySum={quantitySum}/>}>
           <Route index element={<Home data={data} quantitySum={quantitySum} setQuantitySum={setQuantitySum}/>}></Route>
           <Route path="cart" element={<Cart data={data} quantitySum={quantitySum} setQuantitySum={setQuantitySum}/>}></Route>
           <Route path="*" element={<Error/>}></Route>

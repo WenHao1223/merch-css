@@ -5,10 +5,12 @@ import 'boxicons';
 const SharedLayout = (props) => {
     const navigate = useNavigate();
     const cart = () => {
-        return navigate("/merch-css/cart");
+        // return navigate("/merch-css/cart");
+        return navigate("/cart");
     }
     const home = () => {
-        return navigate("/merch-css");
+        // return navigate("/merch-css");
+        return navigate("/");
     }
 
     return (

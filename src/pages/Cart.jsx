@@ -116,7 +116,8 @@ const Cart = (props) => {
                                         order: data.map(({title, quantity}) => ({title, quantity}))
                                     }).then(() => {
                                         confirm("Your form has been submitted and waiting to be reviewed by the team!");
-                                        navigate("/merch-css/")
+                                        // navigate("/merch-css/");
+                                        navigate("/");
                                     }).catch((error) => {
                                         console.log(error);
                                         alert("File upload failed. Please submit the form again.");
